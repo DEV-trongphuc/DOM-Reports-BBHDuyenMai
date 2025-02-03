@@ -819,7 +819,7 @@ const itemDate = document.querySelectorAll(".dom_choose_day li"); // Select all 
 const radio_choose_date = document.querySelectorAll(
   ".dom_choose_day li .radio_box"
 ); // Select all li items in the dom_choose_day list
-radio_choose_date[7].classList.add("active");
+radio_choose_date[4].classList.add("active");
 itemDate.forEach((item, index) => {
   item.addEventListener("click", () => {
     if (item.dataset.date != preset) {
@@ -869,6 +869,7 @@ document
   .addEventListener("click", function () {
     // Lấy giá trị từ các ô nhập ngày
     const iview = localStorage.getItem("iview");
+    const query = localStorage.getItem("query");
     if (!iview) {
       filterData("");
     }
@@ -877,7 +878,6 @@ document
     if (view_adsetActive) {
       view_adsetActive.classList.remove("active");
     }
-    renderReportPerformance();
     const startDate = document.getElementById("start").value;
     const endDate = document.getElementById("end").value;
     startDateGlobal = startDate;
@@ -894,18 +894,29 @@ document
       alert("Start date cannot be later than the end date.");
       return;
     }
-
+    const radio_choose_dateActive = document.querySelector(
+      ".dom_choose_day li .radio_box.active"
+    );
+    radio_choose_dateActive &&
+      radio_choose_dateActive.classList.remove("active");
+    radio_choose_date[radio_choose_date.length - 1].classList.add("active");
     // Gọi API với khoảng thời gian cụ thể
-    const apiUrl = `https://graph.facebook.com/v16.0/act_${adAccountId}/insights?level=adset&fields=campaign_name,adset_name,spend,impressions,reach,actions&time_range={"since":"${startDate}","until":"${endDate}"}&filtering=[{"field":"spend","operator":"GREATER_THAN","value":0}]&access_token=${accessToken}&limit=1000`;
+    const apiUrl = `https://graph.facebook.com/v16.0/act_${adAccountId}/insights?level=adset&fields=campaign_name,adset_name,spend,impressions,reach,actions,optimization_goal&time_range={"since":"${startDate}","until":"${endDate}"}&filtering=[{"field":"spend","operator":"GREATER_THAN","value":0}]&access_token=${accessToken}&limit=1000`;
     preset = null;
     fetchData(apiUrl);
+    if (!viewCampaigns) {
+      filterData("", "", query);
+      renderReportPerformance();
+    } else {
+      filterData(viewCampaigns, viewAdsets);
+      renderReportPerformance(viewCampaigns, viewAdsets);
+    }
     dom_choose_day.classList.remove("active");
     dom_choosed_day.innerText = `${formatDate(startDate)} - ${formatDate(
       endDate
     )}`;
     dom_choosed.innerText = `Custom time range`;
   });
-
 // Hàm định dạng ngày thành dd/mm/yyyy
 function formatDate(date) {
   const d = new Date(date);
