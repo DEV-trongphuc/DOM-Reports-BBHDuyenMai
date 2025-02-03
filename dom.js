@@ -157,7 +157,7 @@ async function fetchData(api) {
       Math.round(totals.reach)
     );
     document.getElementById("total_reaction").textContent = formatNumber(
-      Math.round(totals.lead)
+      Math.round(totals.reaction)
     );
     document.getElementById("total_follows").textContent = formatNumber(
       Math.round(totals.follows)
@@ -336,7 +336,7 @@ function processData(data, performance) {
       total_reach_viewPerformance.innerText = formatNumber(reach);
       total_messenger_viewPerformance.innerText = formatNumber(messengerStart);
       total_follows_viewPerformance.innerText = formatNumber(follows);
-      total_reaction_viewPerformance.innerText = formatNumber(lead);
+      total_reaction_viewPerformance.innerText = formatNumber(reactions);
       total_engagement_viewPerformance.innerText = formatNumber(engagement);
       total_comment_viewPerformance.innerText = formatNumber(comments);
       total_link_viewPerformance.innerText = formatNumber(linkClicks);
@@ -549,7 +549,9 @@ function processData(data, performance) {
         : "-";
 
     dom_reaction_unit.innerText =
-      leadCount > 0 ? formatCurrency((leadSpend / leadCount).toFixed(0)) : "-";
+      engagementReaction > 0
+        ? formatCurrency((engagementSpend / engagementReaction).toFixed(0))
+        : "-";
 
     dom_mess_unit.innerText =
       messageCount > 0
