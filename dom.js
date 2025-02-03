@@ -1453,7 +1453,7 @@ function drawRegionChart(regionReach) {
         },
       },
       barPercentage: 0.3, // Kích thước cột nhỏ lại (0.1 - 1)
-      categoryPercentage: 0.8, // Khoảng cách giữa các cột
+      // categoryPercentage: 0.8, // Khoảng cách giữa các cột
     },
   });
 }
