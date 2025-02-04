@@ -184,10 +184,48 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Total LikePage</p>
+              <p class="dom_total_title">Likepage</p>
               <p class="dom_total_number" id="total_follows"></p>
             </div>
             <i class="fa-solid fa-thumbs-up"></i>
+          </div>
+        </div>
+      </div>
+      <div class="dom_total first_block">
+        <div class="dom_total_item spend">
+          <div>
+            <div>
+              <p class="dom_total_title">Link Clicks</p>
+              <p class="dom_total_number" id="total_clicks"></p>
+            </div>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Impressions</p>
+              <p class="dom_total_number" id="total_impressions"></p>
+            </div>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Message</p>
+              <p class="dom_total_number" id="total_message"></p>
+            </div>
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Reactions</p>
+              <p class="dom_total_number" id="total_love"></p>
+            </div>
+            <i class="fa-solid fa-heart"></i>
           </div>
         </div>
       </div>
@@ -195,17 +233,17 @@
         <div class="live-indicator">
           <span class="live-dot"></span>
         </div>
-        <h2>Report for SNOWEE</h2>
+        <h2></h2>
         <span>-</span>
         <div class="dom_title_report_list campaign">
           <div>
             <span class="dom_view_campaign">Data for all campaigns</span>
             <i class="fa-solid fa-sort-down"></i>
             <ul>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+              <li><span class="radio_box"></span></li>
+              <li><span class="radio_box"></span></li>
+              <li><span class="radio_box"></span></li>
+              <li><span class="radio_box"></span></li>
             </ul>
           </div>
         </div>
@@ -216,10 +254,10 @@
               <span class="dom_view_campaign adset">Data for all adsets</span>
               <i class="fa-solid fa-sort-down"></i>
               <ul class="active">
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+                <li><span class="radio_box"></span></li>
+                <li><span class="radio_box"></span></li>
+                <li><span class="radio_box"></span></li>
+                <li><span class="radio_box"></span></li>
               </ul>
             </div>
           </div>
@@ -353,7 +391,7 @@
           </div>
         </div>
         <div class="dom_chart_item dom_view_adset dom_event_ul">
-          <h2>Top Event on Ad</h2>
+          <h2>Top Event in Adset</h2>
           <ul>
             <li>
               <p><span>Reaction</span><span>145</span></p>
@@ -708,7 +746,9 @@
       <div class="dom_role_container_overlay"></div>
     </div>
     <div class="dom_quickadset_overlay"></div>
- <script src="./domvar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="./domvar.js"></script>
     <script src="./dom.js"></script>
   </body>
 </html>
