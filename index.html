@@ -4,20 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ads Reports - DUYENMAI - Phúc Marketing</title>
-    <link
+  <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-      <script
+    <script
       src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
       integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <link rel="icon" href="https://dom-reports-ideas.netlify.app/DOM-img/faviicon.png" type="image/png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <link rel="icon" href="./DOM-img/faviicon.png" type="image/png" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +27,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://dom-reports-ideas.netlify.app/dom.css" />
+    <link
+      rel="stylesheet"
+      href="https://dom-reports-ideas.netlify.app/dom.css"
+    />
   </head>
   <body>
     <div id="dom_sidebar">
@@ -569,7 +574,7 @@
               placeholder='Filter by "Campaign name"'
               type="text"
             />
-            <p id="dom_detail_find">FIND</p>
+            <p id="dom_detail_find">Export <i class="fa-solid fa-table"></i></p>
           </div>
         </div>
         <div class="dom_table_container">
@@ -577,7 +582,7 @@
             <table class="dom_detail_table" id="dom_table">
               <thead>
                 <tr>
-                  <th>Select</th>
+                  <th><input type="checkbox" id="dom_select_all" /></th>
                   <th>Campaign Name</th>
                   <th>Adset Name</th>
                   <th>Insights</th>
