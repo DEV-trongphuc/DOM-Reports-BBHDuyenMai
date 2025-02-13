@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ads Reports - DUYENMAI - Phúc Marketing</title>
-  <link
+    <title></title>
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -19,7 +19,11 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
-    <link rel="icon" href="https://dom-reports-ideas.netlify.app/DOM-img/faviicon.png" type="image/png" />
+    <link
+      rel="icon"
+      href="https://dom-reports-ideas.netlify.app/DOM-img/faviicon.png"
+      type="image/png"
+    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,10 +31,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://dom-reports-ideas.netlify.app/dom.css"
-    />
+    <link rel="stylesheet" href="https://dom-reports-phucloctho.netlify.app/dom.css" />
   </head>
   <body>
     <div id="dom_sidebar">
@@ -40,10 +41,10 @@
       </div>
       <div class="dom_adsid">
         <div>
-          <img src="./DOM-img/DM.png" />
+          <img id="dom_account_src" src="" />
           <div>
-            <p>Duyên Mai BM</p>
-            <p>1709508983236012</p>
+            <p id="dom_account_name"></p>
+            <p id="dom_account_id"></p>
           </div>
         </div>
         <!-- <i class="fa-solid fa-chevron-down"></i> -->
@@ -52,7 +53,7 @@
       <ul class="dom_main_menu">
         <li>
           <a class="active">
-            <i class="fa-solid fa-chart-column"></i> <span>Dashboard</span></a
+            <i class="fa-solid fa-chart-column"></i><span>Dashboard</span></a
           >
         </li>
         <li>
@@ -62,21 +63,9 @@
         </li>
         <li>
           <a class="">
-            <i class="fa-solid fa-chart-pie"></i> <span>Demographic</span></a
+            <i class="fa-solid fa-chart-pie"></i><span>Demographic</span></a
           >
         </li>
-        <!-- <li>
-          <a class="">
-            <i class="fa-solid fa-user-group"></i>
-            <span>Demographic</span></a
-          >
-        </li>
-        <li>
-          <a class="">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Flatform</span></a
-          >
-        </li> -->
       </ul>
       <p>QUICK FILTER</p>
       <ul class="dom_quick_filter"></ul>
@@ -85,7 +74,6 @@
       </div>
     </div>
     <div id="dom_side_overlay"></div>
-
     <div id="dom_contentarea" class="">
       <div class="dom_header">
         <div class="dom_bar">
@@ -103,7 +91,7 @@
               <li data-date="yesterday">
                 <span class="radio_box"></span> <span>Yesterday</span>
               </li>
-             
+
               <li data-date="this%5fweek%5fmon%5ftoday">
                 <span class="radio_box"></span> <span>This Week</span>
               </li>
@@ -139,8 +127,8 @@
           <p class="dom_choosed_day"></p>
         </div>
         <div class="dom_user">
-          <p>Duyên Mai BM</p>
-          <img src="./DOM-img/DM.png" />
+          <p id="dom_account_name_r"></p>
+          <img id="dom_account_src_r" src="" />
           <ul>
             <!-- <li>
               <a href="javascript:;" id="dom_role">
@@ -352,7 +340,7 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Total Account Spent</p>
+              <p class="dom_total_title">Total Spent</p>
               <p class="dom_total_number" id="total_spend_viewPerformance"></p>
             </div>
             <i class="fa-solid fa-sack-dollar"></i>
@@ -401,7 +389,7 @@
           </div>
         </div>
         <div class="dom_chart_item dom_view_adset dom_event_ul">
-          <h2>Top Event in Adset</h2>
+          <h2>Engagement Events</h2>
           <ul>
             <li>
               <p><span>Reaction</span><span>145</span></p>
@@ -607,6 +595,8 @@
                   <th>Video view</th>
                   <th>Photo view</th>
                   <th>Comments</th>
+                  <th>Post Save</th>
+                  <th>Share</th>
                   <th>Link Click</th>
                 </tr>
               </thead>
@@ -614,6 +604,8 @@
               <tfoot>
                 <tr>
                   <td class="dom_selected_total" colspan="3"></td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -711,86 +703,6 @@
           </ul>
         </div>
       </div>
-      <div class="dom_chart_total only oodo viewReportOodo">
-        <div class="dom_chart_item">
-          <div class="">
-            <a
-              href="https://erp.ideas.orissolution.com/web/login"
-              target="_blank"
-            >
-              <img class="logo_oodo" src="./DOM-img/Odoo-Logo.wine.png"
-            /></a>
-            <h2>Total Leads Created: <span class="oodo_total"></span></h2>
-            <div id="progressBar">
-              <p class="segment"></p>
-              <p class="segment"></p>
-              <p class="segment"></p>
-              <p class="segment"></p>
-              <p class="segment"></p>
-            </div>
-            <div class="progess_label">
-              <p>Needed: <b>70%</b></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="dom_chart_total circle viewReportOodo">
-        <div class="dom_chart_item circle leadchart">
-          <h2>Saleperson - Lead & Needed</h2>
-          <canvas id="leadChart"></canvas>
-        </div>
-        <div class="dom_chart_item list">
-          <div class="dom_highest_switch">
-            <h2>Detail Tags</h2>
-            <div class="">
-              <p class="sale_switch active">Phúc</p>
-              <p class="sale_switch">Đan</p>
-              <p class="sale_switch">Nhi</p>
-            </div>
-          </div>
-          <div class="dom_chart_item_highest">
-            <ul class="dom_chart_most_ul oodo"></ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="dom_table_data oodo viewReportOodo">
-        <div class="dom_detail_head">
-          <h2>Detail Leads</h2>
-          <div>
-            <input
-              id="dom_detail_input"
-              class="oodo"
-              placeholder='Filter by "Phone & Saleperson"'
-              type="text"
-            />
-            <p id="dom_detail_find" class="oodo">
-              Export <i class="fa-solid fa-table"></i>
-            </p>
-          </div>
-        </div>
-        <div class="dom_table_container oodo">
-          <div>
-            <table class="dom_detail_table" id="dom_table_oodo">
-              <thead>
-                <tr>
-                  <th>Create Date</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Tag</th>
-                  <th>Saleperson</th>
-                  <th>Description</th>
-                  <th>Last_update</th>
-                  <th>Medium</th>
-                </tr>
-              </thead>
-              <tbody class="dom_detail_tbody_oodo"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
       <div class="loading">
         <span class="loader"></span>
       </div>
@@ -844,9 +756,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="./domvar.js"></script>
-    <script src="https://dom-reports-ideas.netlify.app/dom.js"></script>
-    <script src="./dom_oodo.js"></script>
+    <script src="https://dom-reports-phucloctho.netlify.app/dom.js"></script>
   </body>
 </html>
-
-
