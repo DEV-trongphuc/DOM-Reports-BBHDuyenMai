@@ -26,3 +26,13 @@ const accessToken =
 const adAccountId = "1709508983236012"; // BBH DUYENMAI
 
 let oodo_view = false;
+const NAME = "BM Duyên Mai";
+const LOGO_ACCOUNT = "./DOM-img/DM.png";
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#dom_account_name").textContent = NAME;
+  document.querySelector("#dom_account_name_r").textContent = NAME;
+  document.querySelector("#dom_account_id").textContent = adAccountId;
+  document.querySelector("#dom_account_src").src = LOGO_ACCOUNT;
+  document.querySelector("#dom_account_src_r").src = LOGO_ACCOUNT;
+  document.title = `${NAME} - Meta Ads Report by DOM Marketing`;
+});
