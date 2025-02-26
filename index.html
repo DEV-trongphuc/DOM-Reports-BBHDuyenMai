@@ -33,7 +33,7 @@
       <div id="dom_sidebar">
         <div class="dom_logo">
           <img
-            src="https://dom-reports-ideas.netlify.app/DOM-img/DOM_MARKETING.png"
+            src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_MARKETING.png"
             alt="Dom Marketing Logo"
           />
           <i class="fa-regular fa-square-caret-left"></i>
@@ -339,7 +339,52 @@
         </div>
         <div class="dom_demographic_overlay"></div>
       </div>
-      <div id="dom_payment" class="none"></div>
+      <div id="dom_payment" class="none">
+        <div class="dom_payment_block"></div>
+        <div class="dom_block">
+          <div class="dom_block_item w100">
+            <h2>Advertising by month</h2>
+            <div class="dom_block_item_wrap">
+              <div class="dom_selected monthly">
+                <span class="dom_selected_text">View Spent</span>
+                <i class="fa-solid fa-angle-down"></i>
+                <ul class="dom_select_show monthly">
+                  <li data-view="Reach">
+                    <span class="radio_box"></span><span>Reach</span>
+                  </li>
+                  <li data-view="Message Start">
+                    <span class="radio_box"></span><span>Message Start</span>
+                  </li>
+                  <li data-view="Leads">
+                    <span class="radio_box"></span><span>Leads</span>
+                  </li>
+                  <li data-view="Post Reactions">
+                    <span class="radio_box"></span><span>Post Reactions</span>
+                  </li>
+                  <li data-view="Post Engagement">
+                    <span class="radio_box"></span><span>Post Engagement</span>
+                  </li>
+                  <li data-view="Page Likes">
+                    <span class="radio_box"></span><span>Page Likes</span>
+                  </li>
+                  <li data-view="Spend" class="active">
+                    <span class="radio_box"></span><span>Spent</span>
+                  </li>
+                  <li data-view="Link Click">
+                    <span class="radio_box"></span><span>Link Click</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="dom_selected yearly">
+                <span class="dom_selected_text"></span>
+                <i class="fa-solid fa-angle-down"></i>
+                <ul class="dom_select_show yearly"></ul>
+              </div>
+            </div>
+            <canvas id="chartMonthly"></canvas>
+          </div>
+        </div>
+      </div>
       <div class="loading">
         <span class="loader"></span>
       </div>
