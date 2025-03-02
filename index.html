@@ -111,9 +111,9 @@
 
         <div class="dom_user">
           <p>DOM</p>
-          <img src="" />
+          <img src="https://dom-marketing.netlify.app/img/dom_avatar.jpg" />
           <ul>
-            <li id="logout">
+            <li id="accounts_btn">
               <a>
                 <i class="fa-solid fa-rectangle-list"></i>
                 <span>Accounts</span>
@@ -412,6 +412,66 @@
           </div>
         </div>
       </div>
+      <div class="dom_accounts">
+        <div class="dom_accounts_head">
+          <img src="./img/DOM_LOGO.png" />
+          <p>Manager Ad Account</p>
+        </div>
+        <p>Your Ad Account</p>
+        <div class="dom_accounts_list"></div>
+        <div class="dom_accounts_btns">
+          <p class="dom_accounts_btn_close">Close</p>
+          <p class="dom_accounts_btn_add">Add+</p>
+        </div>
+        <div class="dom_accounts_add">
+          <div class="dom_accounts_add_head">
+            <img
+              class="dom_login_avatar"
+              src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_LOGO.png"
+            />
+            <i class="fa-solid fa-circle-chevron-left dom_close_add"></i>
+          </div>
+          <div class="dom_form_wrapper">
+            <label>
+              <span>Ad ID</span>
+              <input type="text" id="ad_id" />
+            </label>
+            <label>
+              <span>Access Token</span>
+              <input type="text" id="access_token" />
+            </label>
+            <a href="#">Hướng dẫn lấy Access Token</a>
+            <p id="view_report">CONFIRM</p>
+          </div>
+        </div>
+        <div class="dom_accounts_edit">
+          <div class="dom_accounts_add_head">
+            <img
+              class="dom_login_avatar"
+              src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_LOGO.png"
+            />
+            <i class="fa-solid fa-circle-chevron-left dom_close_edit"></i>
+          </div>
+          <div class="dom_form_wrapper">
+            <div class="dom_accounts_list_item">
+              <div class="dom_edit_info"></div>
+            </div>
+            <label class="dom_key_check" for="key_check">
+              <input type="checkbox" id="key_check" />
+              <span>Quick Filter by Keyword or Brand</span>
+            </label>
+
+            <label for="key_adset">
+              <span>Keyword in Adset (separated by ",")</span>
+              <input type="text" id="key_adset" />
+            </label>
+
+            <p id="confirm_keyword">CONFIRM</p>
+          </div>
+        </div>
+      </div>
+      <div class="dom_accounts_overlay"></div>
+
       <div class="loading">
         <span class="loader"></span>
       </div>
