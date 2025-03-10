@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
 
     <link
       rel="icon"
@@ -108,36 +109,40 @@
           </div>
           <p id="dom_time_show">01/01/2024</p>
         </div>
-
-        <div class="dom_user">
-          <p>DOM</p>
-          <img src="https://dom-marketing.netlify.app/img/dom_avatar.jpg" />
-          <ul>
-            <li id="accounts_btn">
-              <a>
-                <i class="fa-solid fa-rectangle-list"></i>
-                <span>Accounts</span>
-              </a>
-            </li>
-            <!-- <li>
+        <div class="dom_header_right">
+          <div class="dom_share">
+            <span>Share</span> <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <div class="dom_user">
+            <p>DOM</p>
+            <img src="https://dom-marketing.netlify.app/img/dom_avatar.jpg" />
+            <ul>
+              <li id="accounts_btn">
+                <a>
+                  <i class="fa-solid fa-rectangle-list"></i>
+                  <span>Accounts</span>
+                </a>
+              </li>
+              <!-- <li>
               <a href="javascript:;" id="dom_role">
                 <i class="fa-solid fa-feather"></i>
                 <span>DOM Role</span>
               </a>
             </li> -->
-            <li>
-              <a href="https://www.facebook.com/turni0" target="_blank">
-                <i class="fa-solid fa-headset"></i>
-                <span>Contact IT</span>
-              </a>
-            </li>
-            <li id="fixapp">
-              <a>
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <span>Fix App</span>
-              </a>
-            </li>
-          </ul>
+              <li>
+                <a href="https://www.facebook.com/turni0" target="_blank">
+                  <i class="fa-solid fa-headset"></i>
+                  <span>Contact IT</span>
+                </a>
+              </li>
+              <li id="fixapp">
+                <a>
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
+                  <span>Fix App</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div id="dom_content">
@@ -417,31 +422,57 @@
           <img src="https://dom-marketing.netlify.app/img/DOM_LOGO.png" />
           <p>Manager Ad Account</p>
         </div>
-        <p>Your Ad Account</p>
+        <div class="dom_accounts_sync">
+          <p class="dom_accounts_p">Your Ad Account</p>
+        </div>
         <div class="dom_accounts_list"></div>
         <div class="dom_accounts_btns">
           <p class="dom_accounts_btn_close">Close</p>
-          <p class="dom_accounts_btn_add">Add+</p>
+          <div class="dom_accounts_btnsadd">
+            <p>
+              <i
+                class="fa-solid fa-mobile-screen-button dom_accounts_btn_qr"
+                title="Sync to Mobile"
+              ></i>
+            </p>
+            <p>
+              <i
+                class="fa-solid fa-share-from-square dom_accounts_btn_coppy"
+                title="Copy All Accounts"
+              ></i>
+            </p>
+            <p class="dom_accounts_btn_add">
+              <i class="fa-solid fa-link"></i> <span>Connect</span>
+            </p>
+          </div>
         </div>
         <div class="dom_accounts_add">
           <div class="dom_accounts_add_head">
             <img
               class="dom_login_avatar"
-              src="https://dom-marketing.netlify.app/img/DOM_LOGO.png"
+              src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_LOGO.png"
             />
-            <i class="fa-solid fa-circle-chevron-left dom_close_add"></i>
+            <i class="fa-solid fa-circle-chevron-left dom_close"></i>
           </div>
           <div class="dom_form_wrapper">
-            <label>
-              <span>Ad ID</span>
-              <input type="text" id="ad_id" />
-            </label>
             <label>
               <span>Access Token</span>
               <input type="text" id="access_token" />
             </label>
             <a href="#">Hướng dẫn lấy Access Token</a>
-            <p id="view_report">CONFIRM</p>
+            <label class="dom_add_id">
+              <input type="checkbox" id="add_id" />
+              <p>
+                <span>Connect an Account ID</span>
+                <span>Turn off to connect ALL accounts you manage</span>
+              </p>
+            </label>
+            <label>
+              <span>Ad ID</span>
+              <input type="text" id="ad_id" />
+            </label>
+
+            <p id="view_report">CONNECT</p>
           </div>
         </div>
         <div class="dom_accounts_edit">
@@ -450,7 +481,7 @@
               class="dom_login_avatar"
               src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_LOGO.png"
             />
-            <i class="fa-solid fa-circle-chevron-left dom_close_edit"></i>
+            <i class="fa-solid fa-circle-chevron-left dom_close"></i>
           </div>
           <div class="dom_form_wrapper">
             <div class="dom_accounts_list_item">
@@ -471,7 +502,21 @@
         </div>
       </div>
       <div class="dom_accounts_overlay"></div>
-
+      <div class="dom_alert">
+        <div class="dom_accounts_head">
+          <img src="https://dom-marketing.netlify.app/img/DOM_LOGO.png" />
+          <p class="dom_alert_title">Terms of use</p>
+        </div>
+        <div class="dom_alert_inner">
+          <div class="dom_alert_content"></div>
+          <p id="dom_checked">CONFIRM</p>
+          <div class="dom_confirm">
+            <p id="confirm_close">Connect an ID</p>
+            <p id="confirm_ok">Continute Connect All</p>
+          </div>
+        </div>
+      </div>
+      <div class="dom_alert_overlay"></div>
       <div class="loading">
         <span class="loader"></span>
       </div>
