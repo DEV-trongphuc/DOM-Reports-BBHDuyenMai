@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DOM META - REPORT</title>
+    <!-- <link rel="stylesheet" href="./main.css" /> -->
+    <link rel="stylesheet" href="https://meta-report.vercel.app/main.css" />
+    <!-- <link rel="stylesheet" href="./phone.css" /> -->
+    <link rel="icon" href="https://dom-marketing.netlify.app/img/domfavicon.png" type="image/png">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -11,517 +15,785 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="./domfavicon.png" type="image/png" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Plugin hiển thị số trên đầu cột -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
-
-    <link
-      rel="icon"
-      href="https://dom-marketing.netlify.app/img/domfavicon.png"
-      type="image/png"
-    />
-    <link rel="stylesheet" href="https://dom-marketing.netlify.app/dom.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   </head>
   <body>
-    <main id="dom" class="">
-      <div class="dom_warning">
-        <p>
-          <i class="fa-solid fa-bolt"></i> <span> View High CPM Adsets </span>
-        </p>
-      </div>
-      <div id="dom_sidebar">
+    <section id="dom" class="flex">
+      <div class="dom_sidebar box_shadow flex">
         <div class="dom_logo">
+          <!-- <img
+            src="https://raw.githubusercontent.com/DEV-trongphuc/DOM_MISA_IDEAS_CRM/refs/heads/main/Coffee%20Talk%20AI%20LEARNING%20(9).png"
+            alt="DOM Report Logo"
+          /> -->
           <img
-            src="https://dom-marketing.netlify.app/img/DOM_LOGO.png"
-            alt="Dom Marketing Logo"
+            src="https://ideas.edu.vn/wp-content/uploads/2025/10/DOM_LOGO.webp"
+            alt="DOM Report Logo"
           />
-          <i class="fa-regular fa-square-caret-left"></i>
+          <i id="mobile_menu" class="fa-solid fa-square-caret-left"></i>
         </div>
+        <p class="dom_text_menu">PROJECT VIEW</p>
         <div class="dom_account_view">
-          <div class="dom_account_view_block"></div>
-          <ul></ul>
-        </div>
-        <div class="dom_menu">
-          <span class="dom_menu_text">Main Menu</span>
-          <ul class="dom_main_menu">
-            <li class="active">
-              <i class="fa-solid fa-chart-column"></i> <span> Dashboard</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-chart-pie"></i> <span> Performance</span>
-            </li>
-            <li>
-              <i class="fa-solid fa-money-check"></i> <span> Account Info</span>
-            </li>
-          </ul>
-          <span class="dom_menu_text">Quick Filter</span>
-          <ul class="dom_sub_menu"></ul>
-        </div>
-      </div>
-      <div class="dom_sidebar_overlay"></div>
-      <div id="dom_header">
-        <div class="dom_navbar">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="dom_time">
-          <i class="fa-solid fa-calendar-days"></i>
-          <div class="dom_selected time">
-            <span class="dom_selected_text">This Month</span>
-            <i class="fa-solid fa-angle-down"></i>
-            <ul class="dom_select_show time">
-              <li data-date="today">
-                <span class="radio_box"></span> <span>Today</span>
-              </li>
-              <li data-date="yesterday">
-                <span class="radio_box"></span> <span>Yesterday</span>
-              </li>
-              <li data-date="this%5fmonth" class="active">
-                <span class="radio_box"></span> <span>This Month</span>
-              </li>
-              <li data-date="last%5fmonth">
-                <span class="radio_box"></span> <span>Last Month</span>
-              </li>
-              <li data-date="this%5fquarter">
-                <span class="radio_box"></span> <span>This Quarter</span>
-              </li>
-              <li data-date="last%5fquarter">
-                <span class="radio_box"></span> <span>Last Quarter</span>
-              </li>
-              <li data-date="this_year">
-                <span class="radio_box"></span> <span>This Year</span>
-              </li>
-              <li data-date="custom_date" class="custom_item">
-                <span class="radio_box"></span> <span>Custom Date</span>
-                <div class="custom_date">
-                  <p><span>Start</span> <input type="date" id="start" /></p>
-                  <p><span>End</span> <input type="date" id="end" /></p>
-                  <a class="apply_custom_date">Apply</a>
+          <div class="dom_account_view_block">
+            <div class="account_item">
+              <div>
+                <img
+                  class="account_item_avatar"
+                  src="https://ideas.edu.vn/wp-content/uploads/2025/10/518336360_122227900856081421_6060559121060410681_n.webp"
+                />
+                <div class="account_item_info">
+                  <p class="account_item_name">Duyên Mai BM</p>
+                  <p class="account_item_id">1709508983236012</p>
                 </div>
-              </li>
-            </ul>
+              </div>
+              <i class="fa-solid fa-sort"></i>
+            </div>
           </div>
-          <p id="dom_time_show">01/01/2024</p>
+          <!-- <ul class="box_shadow">
+            <li data-acc="437334141328696">
+              <img
+                src="https://ideas.edu.vn/wp-content/uploads/2025/10/520821295_122209126670091888_6779497482843304564_n.webp"
+              />
+              <p><span>VTCI 8696</span></p>
+            </li>
+            <li data-acc="1852318231510577">
+              <img
+                src="https://ideas.edu.vn/wp-content/uploads/2025/10/518336360_122227900856081421_6060559121060410681_n.webp"
+              />
+              <p><span>
+                MBA 577</span></p>
+            </li>
+          </ul> -->
         </div>
-        <div class="dom_header_right">
-          <div class="dom_share">
-            <span>Share</span> <i class="fa-solid fa-share-nodes"></i>
-          </div>
-          <div class="dom_user">
-            <p>DOM</p>
-            <img src="https://dom-marketing.netlify.app/img/dom_avatar.jpg" />
-            <ul>
-              <li id="accounts_btn">
-                <a>
-                  <i class="fa-solid fa-rectangle-list"></i>
-                  <span>Accounts</span>
-                </a>
-              </li>
-              <!-- <li>
-              <a href="javascript:;" id="dom_role">
-                <i class="fa-solid fa-feather"></i>
-                <span>DOM Role</span>
-              </a>
-            </li> -->
-              <li>
-                <a href="https://www.facebook.com/turni0" target="_blank">
-                  <i class="fa-solid fa-headset"></i>
-                  <span>Contact IT</span>
-                </a>
-              </li>
-              <li id="fixapp">
-                <a>
-                  <i class="fa-solid fa-screwdriver-wrench"></i>
-                  <span>Fix App</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <p class="dom_text_menu">MAIN MENU</p>
+        <ul class="dom_menu">
+          <li class="active" data-view="dashboard">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Dashboard</span>
+          </li>
+          <li class="" data-view="ad_detail">
+            <i class="fa-solid fa-list"></i>
+            <span>Ad Detail</span>
+          </li>
+        </ul>
+        <!-- <p class="dom_text_menu">OTHER APP</p>
+        <ul class="dom_other_menu">
+          <li class="" data-view="ads">
+            <a target="_blank" href="https://ideas-crm-dashboard.vercel.app/">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>CRM Dashboard </span>
+            </a>
+          </li>
+
+         
+        </ul> -->
       </div>
-      <div id="dom_content">
-        <div class="dom_filter_head isViewPerformance">
-          <div class="live-indicator">
-            <span class="live-dot"></span>
-          </div>
-          <h2>Report for</h2>
-          <div class="dom_selected campaign">
-            <span class="dom_selected_text">Data for all campaigns</span>
-            <i class="fa-solid fa-sort-down"></i>
-            <ul class="dom_select_show view"></ul>
-          </div>
-          <div class="dom_selected adset">
-            <span class="dom_selected_text">Data for all adsets</span>
-            <i class="fa-solid fa-sort-down"></i>
-            <ul class="dom_select_show view">
-              <li class="active">
-                <span class="radio_box"></span>
-                <span>Today</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span>Yesterday</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span>This Month</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span> Last Month</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span> This Quarter</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span> Last Quarter</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span> Data Maximum</span>
-              </li>
-              <li>
-                <span class="radio_box"></span>
-                <span> Custom date</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="dom_block spent_chart">
-          <div class="dom_block_item w50">
-            <h2>
-              <i class="fa-solid fa-chart-simple title_icon"></i> Cost spent
-            </h2>
-            <canvas id="chartSpentType"></canvas>
-          </div>
-          <div class="dom_block_item w50">
-            <div class="dom_switch">
-              <h2>
-                <i class="fa-solid fa-ranking-star title_icon"></i> Top spent
-              </h2>
-              <div class="dom_switch_btns">
-                <p class="active">Campaigns</p>
-                <p>Adsets</p>
+      <div class="dom_container dashboard ">
+        <div class="dom_header flex">
+          <div class="dom_header_time">
+            <div class="dom_select time">
+              <div class="flex">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p class="dom_selected">Last 7 days</p>
               </div>
-            </div>
-            <ul class="dom_toplist"></ul>
-          </div>
-        </div>
-
-        <div class="dom_total"></div>
-        <div class="dom_block isViewPerformance">
-          <div class="dom_block_item w40">
-            <h2>Top Event Engagement</h2>
-            <ul class="dom_toplist event"></ul>
-          </div>
-          <div class="dom_block_item w30 hidebg dom_performance">
-            <div>
-              <h2>Cost per Mile</h2>
-              <p class="dom_cpm">5.000đ</p>
-            </div>
-            <div>
-              <h2>Reach to 1 result</h2>
-              <p class="dom_rpr">1.000</p>
-            </div>
-          </div>
-          <div class="dom_block_item w30">
-            <div class="dom_frequency">
-              <h2>Frequency</h2>
-
-              <div
-                class="semi-donut margin"
-                style="--percentage: 80; --fill: #ffa900"
-              >
-                <p class="frequency_number">1.8</p>
-              </div>
-              <div class="frequency_number_label">
-                <p>0</p>
-                <p>4</p>
-              </div>
-              <div class="dom_frequency_label">
-                <p>
-                  <b>Impression</b>
-                  <span class="dom_frequency_label_impression">01111100</span>
-                </p>
-                <p>
-                  <b>Reach</b>
-                  <span class="dom_frequency_label_reach">00110111</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="dom_block mainView">
-          <div class="dom_block_item w100">
-            <h2>
-              <i class="fa-solid fa-chart-line title_icon"></i> Daily Chart
-            </h2>
-            <div class="dom_selected daily">
-              <span class="dom_selected_text">View Spent</span>
               <i class="fa-solid fa-angle-down"></i>
-              <ul class="dom_select_show daily">
-                <li data-view="Reach">
-                  <span class="radio_box"></span><span>Reach</span>
+              <ul class="dom_select_show">
+                <li data-date="today" class="">
+                  <span class="radio_box"></span> <span>Today</span>
                 </li>
-                <li data-view="Message Start">
-                  <span class="radio_box"></span><span>Message Start</span>
+                <li data-date="yesterday" class="">
+                  <span class="radio_box"></span> <span>Yesterday</span>
                 </li>
-                <li data-view="Leads">
-                  <span class="radio_box"></span><span>Leads</span>
+                <li data-date="last_7days" class="active">
+                  <span class="radio_box"></span> <span>Last 7 days</span>
                 </li>
-                <li data-view="Post Reactions">
-                  <span class="radio_box"></span><span>Post Reactions</span>
+                <li data-date="this_week" class="">
+                  <span class="radio_box"></span> <span>This Week</span>
                 </li>
-                <li data-view="Post Engagement">
-                  <span class="radio_box"></span><span>Post Engagement</span>
+                <li data-date="last_week" class="">
+                  <span class="radio_box"></span> <span>Last Week</span>
                 </li>
-                <li data-view="Page Likes">
-                  <span class="radio_box"></span><span>Page Likes</span>
+                <li data-date="this_month" class="">
+                  <span class="radio_box"></span> <span>This Month</span>
                 </li>
-                <li data-view="Spend" class="active">
-                  <span class="radio_box"></span><span>Spent</span>
+                <!-- <li data-date="last_month" class="">
+                  <span class="radio_box"></span> <span>Last Month</span>
                 </li>
-                <li data-view="Link Click">
-                  <span class="radio_box"></span><span>Link Click</span>
+                <li data-date="this_year" class="">
+                  <span class="radio_box"></span> <span>This Year</span>
+                </li> -->
+                <li data-date="custom_range" class="custom_selete">
+                  <span class="radio_box"></span> <span>Custome Date</span>
+                  <div class="custom_date box_shadow">
+                    <p><span>Start</span> <input type="date" id="start" /></p>
+                    <p><span>End</span> <input type="date" id="end" /></p>
+                    <a class="apply_custom_date">Apply</a>
+                  </div>
                 </li>
               </ul>
             </div>
-            <canvas id="chartDaily"></canvas>
+            <p class="dom_date">01/06/2025 - 28/06/2025</p>
           </div>
+          <!-- <div class="dom_filter">
+            <div class="dom_select quick_filter_detail">
+              <img src="./adset/ampersand/ampersand_img.jpg" />
+              <div class="flex">
+                <p class="dom_selected">Ampersand</p>
+              </div>
+              <i class="fa-solid fa-angle-down"></i>
+              <ul class="dom_select_show">
+                <li data-filter="TRB" class="">
+                  <img src="./adset/ampersand/TRB.jpg" />
+                  <span>The Running Bean</span>
+                </li>
+                <li data-filter="Haagen Dazs" class="">
+                  <img src="./adset/ampersand/HD.jpg" />
+                  <span>Häagen-Dazs</span>
+                </li>
+                <li data-filter="BEAN" class="">
+                  <img src="./adset/ampersand/BEAN.jpg" />
+                  <span> Be An Vegetarian</span>
+                </li>
+                <li data-filter="Esta" class="">
+                  <img src="./adset/ampersand/Esta.jpg" />
+                  <span> Esta Saigon</span>
+                </li>
+                <li data-filter="Le Petit" class="">
+                  <img src="./adset/ampersand/LPT.jpg" />
+                  <span> Le Petit</span>
+                </li>
+                <li data-filter="SNOWEE" class="">
+                  <img src="./adset/ampersand/SNOWEE.jpg" />
+                  <span> SNOWEE</span>
+                </li>
+                <li data-filter="" class="">
+                  <img src="./adset/ampersand/ampersand_img.jpg" />
+                  <span> Ampersand</span>
+                </li>
+              </ul>
+            </div>
+          </div> -->
         </div>
-        <div class="dom_table">
-          <div class="dom_table_head">
-            <h2>
-              <i class="fa-solid fa-rectangle-list title_icon"></i> Detail Data
-              Adset
-            </h2>
-            <div>
-              <input
-                class="dom_search"
-                placeholder="Filter Campaign name & Adset name"
-              />
-              <p class="dom_export_main">
-                Export <i class="fa-solid fa-table"></i>
-              </p>
+        <div class="dom_dashboard">
+          <!-- <div class="dom_row flex sale_report">
+            <i class="fa-solid fa-xmark sale_report_close"></i>
+            <div class="dom_select saleperson_detail">
+              <img src="./adset/ampersand/ampersand_img.jpg" />
+              <div class="flex">
+                <p class="dom_selected">Ampersand</p>
+              </div>
+              <i class="fa-solid fa-angle-down"></i>
+              <ul class="dom_select_show">
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/TRB.jpg" />
+                  <span>The Running Bean</span>
+                </li>
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/HD.jpg" />
+                  <span>Häagen-Dazs</span>
+                </li>
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/BEAN.jpg" />
+                  <span> Be An Vegetarian</span>
+                </li>
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/Esta.jpg" />
+                  <span> Esta Saigon</span>
+                </li>
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/LPT.jpg" />
+                  <span> Le Petit</span>
+                </li>
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/SNOWEE.jpg" />
+                  <span> SNOWEE</span>
+                </li>
+                <li data-date="today" class="">
+                  <img src="./adset/ampersand/ampersand_img.jpg" />
+                  <span> Ampersand</span>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="dom_table_box">
-            <div class="dom_table_container">
-              <table id="main_table">
-                <thead></thead>
-                <tbody></tbody>
-                <tfoot></tfoot>
-              </table>
+            <h4>
+              <i class="fa-solid fa-calendar-days"></i> Detail data:
+              <span class="sale_report_calender">1/1/2025 - 10/1/2025</span>
+            </h4>
+            <div class="toogle_filter box_shadow ai_report_sale">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <p>AI Summary</p>
             </div>
-          </div>
-        </div>
-
-        <div class="dom_demographic">
-          <div class="dom_demographic_title">
-            <i class="fa-solid fa-circle-chevron-left"></i>
-            <div>
-              <span>Demographic </span>
-              <span class="dom_demographic_title_item campaign">Campaign</span>
-              <span>-</span>
-              <span class="dom_demographic_title_item adset">Adset</span>
-            </div>
-          </div>
-          <div class="dom_total demographic"></div>
-          <div class="dom_block">
-            <div class="dom_block_item w100">
-              <h2>Hourly Spent & Impression</h2>
-              <canvas id="hourlyChart"></canvas>
-            </div>
-          </div>
-          <div class="dom_block">
-            <div class="dom_block_item w50">
-              <h2>Reach by age and gender</h2>
-              <canvas id="ageGenderChart"></canvas>
-            </div>
-            <div class="dom_block_item w50">
-              <h2>Reach by Region</h2>
-              <canvas id="regionChart"></canvas>
-            </div>
-          </div>
-          <div class="dom_block">
-            <div class="dom_block_item w25">
-              <h2>Reach on Flatform</h2>
-              <canvas id="reachChart"></canvas>
-            </div>
-            <div class="dom_block_item w25">
-              <h2>Reach on Gender</h2>
-              <canvas id="genderChart"></canvas>
-            </div>
-            <div class="dom_block_item w50">
-              <h2>Impression on Device</h2>
-              <ul class="dom_toplist device"></ul>
-            </div>
-          </div>
-        </div>
-        <div class="dom_demographic_overlay"></div>
-      </div>
-      <div id="dom_payment" class="none">
-        <div class="dom_payment_block"></div>
-        <div class="dom_block">
-          <div class="dom_block_item w100">
-            <h2>
-              <i class="fa-solid fa-chart-simple title_icon"></i> Advertising by
-              month
-            </h2>
-            <div class="dom_block_item_wrap">
-              <div class="dom_selected monthly">
-                <span class="dom_selected_text">View Spent</span>
-                <i class="fa-solid fa-angle-down"></i>
-                <ul class="dom_select_show monthly">
-                  <li data-view="Reach">
-                    <span class="radio_box"></span><span>Reach</span>
+          </div> -->
+          <div class="dom_row flex">
+            <div class="dom_inner dom_fade_item w20 box_shadow chart">
+              <div class="dom_total_report">
+                <ul>
+                  <li class="total_spent">
+                    <span
+                      ><i class="fa-solid fa-circle-dollar-to-slot"></i>
+                      Spent</span
+                    >
+                    <p id="spent">
+                      <span>-</span>
+                    </p>
                   </li>
-                  <li data-view="Message Start">
-                    <span class="radio_box"></span><span>Message Start</span>
+                  <li>
+                    <span><i class="fa-solid fa-street-view"></i> Reach</span>
+                    <p id="reach">
+                      <span>-</span>
+                    </p>
                   </li>
-                  <li data-view="Leads">
-                    <span class="radio_box"></span><span>Leads</span>
+                  <li>
+                    <span
+                      ><i class="fa-brands fa-facebook-messenger"></i>
+                      Message</span
+                    >
+                    <p id="message">
+                      <span>-</span>
+                    </p>
                   </li>
-                  <li data-view="Post Reactions">
-                    <span class="radio_box"></span><span>Post Reactions</span>
-                  </li>
-                  <li data-view="Post Engagement">
-                    <span class="radio_box"></span><span>Post Engagement</span>
-                  </li>
-                  <li data-view="Page Likes">
-                    <span class="radio_box"></span><span>Page Likes</span>
-                  </li>
-                  <li data-view="Spend" class="active">
-                    <span class="radio_box"></span><span>Spent</span>
-                  </li>
-                  <li data-view="Link Click">
-                    <span class="radio_box"></span><span>Link Click</span>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-bullseye"></i> Lead
+                      Generation</span
+                    >
+                    <p id="lead">
+                      <span>-</span>
+                    </p>
                   </li>
                 </ul>
               </div>
-              <div class="dom_selected yearly">
-                <span class="dom_selected_text">2025</span>
-                <i class="fa-solid fa-angle-down"></i>
-                <ul class="dom_select_show yearly"></ul>
+            </div>
+            <div class="dom_inner dom_fade_item w33 box_shadow chart trendline">
+              <div class="dom_table_filter">
+                <h2>
+                  <i class="fa-solid fa-chart-line main_clr"></i> Daily Spent
+                </h2>
+                <div class="dom_select daily_total">
+                  <i class="fa-solid fa-chart-area"></i>
+                  <div class="flex">
+                    <p class="dom_selected">Spent</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <ul class="dom_select_show">
+                    <li data-view="lead" class="">
+                      <span class="radio_box"></span> <span>Lead</span>
+                    </li>
+                    <li data-view="spend" class="">
+                      <span class="radio_box"></span> <span>Spent</span>
+                    </li>
+                    <li data-view="message" class="">
+                      <span class="radio_box"></span> <span>Message</span>
+                    </li>
+                    <li data-view="reach" class="">
+                      <span class="radio_box"></span> <span>Reach</span>
+                    </li>
+                    <li data-view="like" class="">
+                      <span class="radio_box"></span> <span>Page Like</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <canvas id="leadTrendChart"></canvas>
               </div>
             </div>
-            <canvas id="chartMonthly"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="dom_accounts">
-        <div class="dom_accounts_head">
-          <img src="https://dom-marketing.netlify.app/img/DOM_LOGO.png" />
-          <p>Manager Ad Account</p>
-        </div>
-        <div class="dom_accounts_sync">
-          <p class="dom_accounts_p">Your Ad Account</p>
-        </div>
-        <div class="dom_accounts_list"></div>
-        <div class="dom_accounts_btns">
-          <p class="dom_accounts_btn_close">Close</p>
-          <div class="dom_accounts_btnsadd">
-            <p>
-              <i
-                class="fa-solid fa-mobile-screen-button dom_accounts_btn_qr"
-                title="Sync to Mobile"
-              ></i>
-            </p>
-            <p>
-              <i
-                class="fa-solid fa-share-from-square dom_accounts_btn_coppy"
-                title="Copy All Accounts"
-              ></i>
-            </p>
-            <p class="dom_accounts_btn_add">
-              <i class="fa-solid fa-link"></i> <span>Connect</span>
-            </p>
-          </div>
-        </div>
-        <div class="dom_accounts_add">
-          <div class="dom_accounts_add_head">
-            <img
-              class="dom_login_avatar"
-              src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_LOGO.png"
-            />
-            <i class="fa-solid fa-circle-chevron-left dom_close"></i>
-          </div>
-          <div class="dom_form_wrapper">
-            <label>
-              <span>Access Token</span>
-              <input type="text" id="access_token" />
-            </label>
-            <a href="#">Hướng dẫn lấy Access Token</a>
-            <label class="dom_add_id">
-              <input type="checkbox" id="add_id" />
-              <p>
-                <span>Connect an Account ID</span>
-                <span>Turn off to connect ALL accounts you manage</span>
-              </p>
-            </label>
-            <label>
-              <span>Ad ID</span>
-              <input type="text" id="ad_id" />
-            </label>
-
-            <p id="view_report">CONNECT</p>
-          </div>
-        </div>
-        <div class="dom_accounts_edit">
-          <div class="dom_accounts_add_head">
-            <img
-              class="dom_login_avatar"
-              src="https://ampersand-reports-dom.netlify.app/DOM-img/DOM_LOGO.png"
-            />
-            <i class="fa-solid fa-circle-chevron-left dom_close"></i>
-          </div>
-          <div class="dom_form_wrapper">
-            <div class="dom_accounts_list_item">
-              <div class="dom_edit_info"></div>
+            <div
+              class="dom_inner dom_fade_item w35 box_shadow chart full trendline"
+            >
+              <h2>
+                <i class="fa-solid fa-chart-simple main_clr"></i> Optimization goal
+              </h2>
+              <div>
+                <canvas id="goal_chart"></canvas>
+              </div>
             </div>
-            <label class="dom_key_check" for="key_check">
-              <input type="checkbox" id="key_check" />
-              <span>Quick Filter by Keyword or Brand</span>
-            </label>
+            <!-- <div class="dom_inner dom_fade_item w35 box_shadow chart">
+              <h2><i class="fa-solid fa-chart-simple main_clr"></i> Quality</h2>
+              <div class="chart-wrapper">
+                <canvas id="leadTagChart"></canvas>
+              </div>
+            </div> -->
+          </div>
 
-            <label for="key_adset">
-              <span>Keyword in Adset (separated by ",")</span>
-              <input type="text" id="key_adset" />
-            </label>
-
-            <p id="confirm_keyword">CONFIRM</p>
+          <div class="dom_row flex">
+            <div
+              class="dom_inner dom_fade_item w30 box_shadow chart dom_active_report"
+            >
+              <div>
+                <div class="dom_active_cp">
+                  <span>Active Campaign</span>
+                  <span> <span class="live-dot"></span>-/- </span>
+                </div>
+                <div class="dom_active_cp">
+                  <span>Active Adset</span>
+                  <span class="inactive">
+                    <span class="live-dot"></span>-/-
+                  </span>
+                </div>
+              </div>
+              <div class="dom_interaction">
+                <h2>Interaction</h2>
+                <div class="dom_interaction_item">
+                  <div class="dom_interaction_note">
+                    <span>Reactions</span>
+                    <span class="dom_interaction_reaction"> - </span>
+                  </div>
+                  <div class="dom_interaction_note">
+                    <span>Follows</span>
+                    <span class="dom_interaction_like"> - </span>
+                  </div>
+                  <div class="dom_interaction_note">
+                    <span>Comment</span>
+                    <span class="dom_interaction_comment"> - </span>
+                  </div>
+                  <div class="dom_interaction_note">
+                    <span>Share</span>
+                    <span class="dom_interaction_share"> - </span>
+                  </div>
+                  <div class="dom_interaction_note">
+                    <span>Link Clicks</span>
+                    <span class="dom_interaction_click"> - </span>
+                  </div>
+                  <div class="dom_interaction_note">
+                    <span>Video view</span>
+                    <span class="dom_interaction_view"> - </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+     
+           
+          <div
+          class="dom_inner dom_fade_item w33 dom_platform_inner box_shadow chart"
+        >
+          <h2 class="op8">
+            <i class="fa-solid fa-layer-group main_clr"></i> Spent Platform
+          </h2>
+          <div class="dom_platform">
+            <div>
+              <div class="dom_platform_item">
+                <p>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                  />
+                  <span> Facebook </span>
+                </p>
+                <p id="facebook_spent">-</p>
+              </div>
+              <div class="dom_platform_item">
+                <p>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                  />
+                  <span> Instagram </span>
+                </p>
+                <p id="instagram_spent">-</p>
+              </div>
+              <div class="dom_platform_item">
+                <p>
+                  <img
+                    src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png"
+                  />
+                  <span> Other Platform</span>
+                </p>
+                <p id="other_spent">-</p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <canvas id="platform_chart"></canvas>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="dom_accounts_overlay"></div>
-      <div class="dom_alert">
-        <div class="dom_accounts_head">
-          <img src="https://dom-marketing.netlify.app/img/DOM_LOGO.png" />
-          <p class="dom_alert_title">Terms of use</p>
+        <div
+        class="dom_inner dom_fade_item w35 box_shadow chart full trendline"
+      >
+        <h2>
+          <i class="fa-solid fa-chart-simple main_clr"></i> Age & Gender
+        </h2>
+        <div>
+          <canvas id="age_gender_total"></canvas>
         </div>
-        <div class="dom_alert_inner">
-          <div class="dom_alert_content"></div>
-          <p id="dom_checked">CONFIRM</p>
-          <div class="dom_confirm">
-            <p id="confirm_close">Connect an ID</p>
-            <p id="confirm_ok">Continute Connect All</p>
+      </div>
+          </div>
+          <div class="dom_row flex ad_detail">
+            <div class="dom_inner view_campaign">
+              <h2>
+                <i class="fa-solid fa-list main_clr"></i> Detail Campaign -
+                Adsets
+              </h2>
+              <div class="dom_table_header">
+                <div class="dom_campaign_filter">
+                  <input placeholder="Filter by Campaign name" id="filter" />
+                  <i class="fa-solid fa-magnifying-glass" id="filter_button"></i>
+                </div>
+                <div class="dom_select quick_filter">
+                  <div class="flex">
+                    <p class="dom_selected">Quick filter</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <ul class="dom_select_show">
+                    <li  class="">
+                      <span data-view="active_ads" class="radio_box"></span> <span>ACTIVE ADS</span>
+                    </li>
+                    <li  class="">
+                      <span data-view="reset"  class="radio_box"></span> <span>Reset filter</span>
+                    </li>
+                    <!-- <li  class="">
+                      <span class="radio_box"></span> <span>Today</span>
+                    </li>
+                    <li  class="">
+                      <span class="radio_box"></span> <span>Today</span>
+                    </li> -->
+                  </ul>
+                </div>
+                <div>
+                  <!-- <div class="dom_select quick_filter_detail">
+                    <img src="./adset/ampersand/ampersand_img.jpg" />
+                    <div class="flex">
+                      <p class="dom_selected">Ampersand</p>
+                    </div>
+                    <i class="fa-solid fa-angle-down"></i>
+                    <ul class="dom_select_show">
+                      <li data-filter="TRB" class="">
+                        <img src="./adset/ampersand/TRB.jpg" />
+                        <span>The Running Bean</span>
+                      </li>
+                      <li data-filter="Haagen Dazs" class="">
+                        <img src="./adset/ampersand/HD.jpg" />
+                        <span>Häagen-Dazs</span>
+                      </li>
+                      <li data-date="today" class="">
+                        <img src="./adset/ampersand/BEAN.jpg" />
+                        <span> Be An Vegetarian</span>
+                      </li>
+                      <li data-date="today" class="">
+                        <img src="./adset/ampersand/Esta.jpg" />
+                        <span> Esta Saigon</span>
+                      </li>
+                      <li data-date="today" class="">
+                        <img src="./adset/ampersand/LPT.jpg" />
+                        <span> Le Petit</span>
+                      </li>
+                      <li data-date="today" class="">
+                        <img src="./adset/ampersand/SNOWEE.jpg" />
+                        <span> SNOWEE</span>
+                      </li>
+                      <li data-date="today" class="">
+                        <img src="./adset/ampersand/ampersand_img.jpg" />
+                        <span> Ampersand</span>
+                      </li>
+                    </ul>
+                  </div> -->
+                </div>
+              </div>
+
+              <div class="view_campaign_header">
+                <div class="campaign_main">
+                  <div class="ads_name">
+                    <p class="ad_name">Ad Name</p>
+                  </div>
+                  <div class="ad_status">Status</div>
+                  <div class="ad_spent">Spent</div>
+                  <div class="ad_result">Result</div>
+                  <div
+                    class="ad_cpr"
+                    title="The CPR of the REACH and IMPRESSION campaigns will be Cost per 1000 results"
+                  >
+                    Cost per result <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="ad_cpm" title="Cost per mile - (1000 reach)">
+                    CPM <i class="fa-solid fa-circle-info"></i>
+                  </div>
+                  <div class="ad_reach">Reach</div>
+                  <div class="ad_frequency">Frequency</div>
+                  <div class="ad_reaction">Reaction</div>
+                  <div class="campaign_view">Insignht</div>
+                </div>
+              </div>
+              <div class="view_campaign_box"></div>
+            </div>
           </div>
         </div>
+        <div class="dom_detail" id="dom_detail">
+          <div class="dom_detail_header">
+            <div>
+              <img
+                src="https://ideas.edu.vn/wp-content/uploads/2025/10/520821295_122209126670091888_6779497482843304564_n.webp"
+              />
+              <p class="dom_detail_id">ID: 0000</p>
+            </div>
+            <a target="_blank" class="view_post_btn"
+              >VIEW POST <i class="fa-solid fa-up-right-from-square"></i
+            ></a>
+          </div>
+          <div class="dom_row flex um">
+            <!-- Tổng báo cáo -->
+            <div
+              class="dom_inner dom_fade_item w20 box_shadow chart"
+              id="detail_total_report"
+            >
+              <div class="dom_total_report">
+                <ul>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-circle-dollar-to-slot"></i>
+                      Spent</span
+                    >
+                    <p id="detail_spent"><span>...</span></p>
+                  </li>
+                  <li>
+                    <span><i class="fa-solid fa-bullseye"></i> GOAL</span>
+                    <p id="detail_goal"><span>...</span></p>
+                  </li>
+                  <li>
+                    <span><i class="fa-solid fa-bullseye"></i> Results</span>
+                    <p id="detail_result"><span>...</span></p>
+                  </li>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-bullseye"></i> Cost per
+                      Result</span
+                    >
+                    <p id="detail_cpr"><span>...</span></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Leads Daily Chart -->
+            <div
+              class="dom_inner dom_fade_item w33 box_shadow chart trendline"
+              id="detail_daily_chart_wrap"
+            >
+              <div class="dom_table_filter">
+                <h2>
+                  <i class="fa-solid fa-chart-line main_clr"></i> View Daily
+                </h2>
+                <div class="dom_select daily">
+                  <i class="fa-solid fa-chart-area"></i>
+                  <div class="flex">
+                    <p class="dom_selected show">Spent</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <ul class="dom_select_show">
+                    <li data-type="lead">
+                      <span class="radio_box"></span> <span>Lead</span>
+                    </li>
+                    <li data-type="reach">
+                      <span class="radio_box"></span> <span>Reach</span>
+                    </li>
+                    <li data-type="message">
+                      <span class="radio_box"></span> <span>Message</span>
+                    </li>
+                    <li data-type="spend">
+                      <span class="radio_box"></span> <span>Spent</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div>
+                <canvas id="detail_spent_chart"></canvas>
+              </div>
+            </div>
+
+            <!-- Quality -->
+            <div
+              class="dom_inner dom_fade_item w30 box_shadow chart detail_quality_chart"
+              id="detail_quality_chart"
+            >
+              <h2>
+                <i class="fa-solid fa-thumbs-up main_clr"></i> Interaction
+              </h2>
+              <div class="interaction"></div>
+            </div>
+          </div>
+
+          <!-- Adset Actions Charts -->
+
+          <div class="dom_row">
+            <div class="dom_detail_ad">
+              <div class="dom_inner dom_fade_item w50 show chart_by_platform">
+                <h2 class="button_group">
+                  <p class="active btn-source">Detail Cost per Result</p>
+                  <p class="toplist_header">
+                    <span></span>
+                    <span>Total </span>
+                    <span>Result </span>
+                    <span>CPR</span>
+                  </p>
+                </h2>
+                <div class="dom_toplist_wrap" id="chart_by_platform">
+                  <ul class="dom_toplist"></ul>
+                </div>
+              </div>
+              <!-- Targeting -->
+              <div class="detail_set" id="detail_targeting">
+                <div class="detail_gender">
+                  <div>
+                    <h2><i class="fa-solid fa-user-tag main_clr"></i> Audiences</h2>
+                  </div>
+                  <p class="detail_text">Age</p>
+                  <div class="age_text">
+                    <p>18</p>
+                    <p>65</p>
+                  </div>
+                  <div class="detail_age_bar">
+                    <div class="age_range"></div>
+                  </div>
+                  <p class="detail_text">Gender</p>
+                  <div class="detail_gender_bar">
+                    <p>Nam</p>
+                    <p>Nữ</p>
+                    <p>Khác</p>
+                  </div>
+                  <p class="detail_text">Optimize</p>
+                  <div class="detail_optimize detail_gender_bar"><p>Anvatage +</p></div>
+                </div>
+                <div class="detail_gender">
+                  <p class="detail_text">Location</p>
+                  <div class="detail_location_bar"></div>
+                  <p class="detail_text">Targeting</p>
+                  <div class="frequency_tag">
+                    <p class="freq_tag_item">
+                      <span class="tag_dot"></span>
+                      <span class="tag_name">Automatic Target</span>
+                    </p>
+                  </div>
+                  <p class="detail_text">Custom Audiences</p>
+                  <div class="detail_audience frequency_tag"></div>
+                  <p class="detail_text">Exclude</p>
+                  <div class="detail_exclude frequency_tag"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dom_row">
+            <div class="dom_detail_ad">
+              <div class="dom_inner dom_fade_item wfull box_shadow chart show">
+                <h2>
+                  <i class="fa-solid fa-stopwatch main_clr"></i>
+                  24-hour Spent - Result
+                </h2>
+                <div class="chart-wrapper">
+                  <canvas id="chart_by_hour"></canvas>
+                </div>
+              </div>
+              <div class="dom_inner dom_fade_item w25 box_shadow chart show">
+                <h2 class="op8">
+                  <i class="fa-solid fa-bullseye main_clr"></i> Frequency
+                </h2>
+                <div class="dom_frequency">
+                  <div
+                    class="semi-donut margin"
+                    style="--percentage: 26.32; --fill: #ffa900"
+                  >
+                    <p class="frequency_number"><span>0.0</span><span></span></p>
+                  </div>
+                  <div class="frequency_number_label">
+                    <p>0</p>
+                    <p>4</p>
+                  </div>
+                  <div class="dom_frequency_label op8">
+                    <p>
+                      <b>Impression</b>
+                      <span class="dom_frequency_label_impression">0</span>
+                    </p>
+                    <p>
+                      <b>Reach</b>
+                      <span class="dom_frequency_label_reach">0</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Targeting -->
+            </div>
+          </div>
+          <!-- Các chart khác -->
+          <div class="dom_row">
+            <div class="dom_inner dom_fade_item w33 box_shadow chart show">
+              <h2>
+                <i class="fa-solid fa-location-dot main_clr"></i>
+                Region
+              </h2>
+              <div class="chart-wrapper">
+                <canvas id="chart_by_region"></canvas>
+              </div>
+            </div>
+            <div
+              class="dom_inner dom_fade_item w33 box_shadow chart show"
+              id="chart_by_agegender"
+            >
+              <h2>
+                <i class="fa-solid fa-venus-mars main_clr"></i>
+                Age - Gender
+              </h2>
+              <div class="chart-wrapper">
+                <canvas id="chart_by_age_gender"></canvas>
+              </div>
+            </div>
+            <div class="dom_inner dom_fade_item w33 box_shadow chart show">
+              <h2>
+                <i class="fa-solid fa-mobile main_clr"></i>
+                Device
+              </h2>
+              <div class="chart-wrapper">
+                <canvas id="chart_by_device"></canvas>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+        <div class="dom_ai_report">
+          <i class="fa-solid fa-xmark dom_ai_report_close"></i>
+          <h3><i class="fa-solid fa-robot"></i> REPORT FOR -</h3>
+          <div class="dom_ai_report_content"></div>
+          <!-- <button class="btn_download_pdf">
+            <i class="fa-solid fa-circle-down"></i>
+          </button> -->
+        </div>
+        <div class="dom_overlay">
+          <h5><i class="fa-solid fa-angles-left"></i> Click to return</h5>
+        </div>
+        <div class="dom_overlay_ai"></div>
       </div>
-      <div class="dom_alert_overlay"></div>
-      <div class="loading">
-        <span class="loader"></span>
+    </section>
+    <div class="dom_accounts">
+      <div class="dom_accounts_head">
+        <img
+          src="https://ideas.edu.vn/wp-content/uploads/2025/10/DOM_LOGO.webp"
+        />
+        <p>Authenticator App</p>
       </div>
-    </main>
-    <script src="./domvar.js"></script>
-    <script src="https://dom-marketing.netlify.app/dom.js"></script>
+      <div class="dom_accounts_add">
+        <div class="dom_form_wrapper">
+          <label>
+            <span>6 - CODE in Authenticator App</span>
+            <input type="text" id="access_token" />
+          </label>
+          <p id="view_report">CONFIRM</p>
+        </div>
+      </div>
+    </div>
+    <div class="dom_accounts_overlay"></div>
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
   </body>
+  <script src="https://meta-report.vercel.app/token.js"></script>
+  <script src="./setup.js"></script>
+  <script src="https://meta-report.vercel.app/main.js"></script>
 </html>
