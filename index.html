@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM META - REPORT</title>
+    <title>DOM CRM - REPORT</title>
     <!-- <link rel="stylesheet" href="./main.css" /> -->
     <link rel="stylesheet" href="https://meta-report.vercel.app/main.css" />
     <!-- <link rel="stylesheet" href="./phone.css" /> -->
-    <link rel="icon" href="https://dom-marketing.netlify.app/img/domfavicon.png" type="image/png">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -36,10 +35,7 @@
             src="https://raw.githubusercontent.com/DEV-trongphuc/DOM_MISA_IDEAS_CRM/refs/heads/main/Coffee%20Talk%20AI%20LEARNING%20(9).png"
             alt="DOM Report Logo"
           /> -->
-          <img
-            src="https://ideas.edu.vn/wp-content/uploads/2025/10/DOM_LOGO.webp"
-            alt="DOM Report Logo"
-          />
+          <img src="./logo.png" alt="DOM Report Logo" />
           <i id="mobile_menu" class="fa-solid fa-square-caret-left"></i>
         </div>
         <p class="dom_text_menu">PROJECT VIEW</p>
@@ -56,24 +52,10 @@
                   <p class="account_item_id">1709508983236012</p>
                 </div>
               </div>
+              </div>
               <i class="fa-solid fa-sort"></i>
             </div>
           </div>
-          <!-- <ul class="box_shadow">
-            <li data-acc="437334141328696">
-              <img
-                src="https://ideas.edu.vn/wp-content/uploads/2025/10/520821295_122209126670091888_6779497482843304564_n.webp"
-              />
-              <p><span>VTCI 8696</span></p>
-            </li>
-            <li data-acc="1852318231510577">
-              <img
-                src="https://ideas.edu.vn/wp-content/uploads/2025/10/518336360_122227900856081421_6060559121060410681_n.webp"
-              />
-              <p><span>
-                MBA 577</span></p>
-            </li>
-          </ul> -->
         </div>
         <p class="dom_text_menu">MAIN MENU</p>
         <ul class="dom_menu">
@@ -85,20 +67,13 @@
             <i class="fa-solid fa-list"></i>
             <span>Ad Detail</span>
           </li>
-        </ul>
-        <!-- <p class="dom_text_menu">OTHER APP</p>
-        <ul class="dom_other_menu">
-          <li class="" data-view="ads">
-            <a target="_blank" href="https://ideas-crm-dashboard.vercel.app/">
-              <i class="fa-solid fa-layer-group"></i>
-              <span>CRM Dashboard </span>
-            </a>
+          <li class="" data-view="account">
+            <i class="fa-solid fa-money-check"></i>
+            <span>Ad Account</span>
           </li>
-
-         
-        </ul> -->
+        </ul>
       </div>
-      <div class="dom_container dashboard ">
+      <div class="dom_container dashboard">
         <div class="dom_header flex">
           <div class="dom_header_time">
             <div class="dom_select time">
@@ -311,7 +286,8 @@
               class="dom_inner dom_fade_item w35 box_shadow chart full trendline"
             >
               <h2>
-                <i class="fa-solid fa-chart-simple main_clr"></i> Optimization goal
+                <i class="fa-solid fa-chart-simple main_clr"></i> Optimization
+                goal
               </h2>
               <div>
                 <canvas id="goal_chart"></canvas>
@@ -371,62 +347,58 @@
                 </div>
               </div>
             </div>
-          
-     
-           
-          <div
-          class="dom_inner dom_fade_item w33 dom_platform_inner box_shadow chart"
-        >
-          <h2 class="op8">
-            <i class="fa-solid fa-layer-group main_clr"></i> Spent Platform
-          </h2>
-          <div class="dom_platform">
-            <div>
-              <div class="dom_platform_item">
-                <p>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                  />
-                  <span> Facebook </span>
-                </p>
-                <p id="facebook_spent">-</p>
-              </div>
-              <div class="dom_platform_item">
-                <p>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
-                  />
-                  <span> Instagram </span>
-                </p>
-                <p id="instagram_spent">-</p>
-              </div>
-              <div class="dom_platform_item">
-                <p>
-                  <img
-                    src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png"
-                  />
-                  <span> Other Platform</span>
-                </p>
-                <p id="other_spent">-</p>
+
+            <div
+              class="dom_inner dom_fade_item w33 dom_platform_inner box_shadow chart"
+            >
+              <h2 class="">
+                <i class="fa-solid fa-layer-group main_clr"></i> Spent Platform
+              </h2>
+              <div class="dom_platform">
+                <div>
+                  <div class="dom_platform_item">
+                    <p>
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                      />
+                      <span> Facebook </span>
+                    </p>
+                    <p id="facebook_spent">-</p>
+                  </div>
+                  <div class="dom_platform_item">
+                    <p>
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                      />
+                      <span> Instagram </span>
+                    </p>
+                    <p id="instagram_spent">-</p>
+                  </div>
+                  <div class="dom_platform_item">
+                    <p>
+                      <img
+                        src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png"
+                      />
+                      <span> Other Platform</span>
+                    </p>
+                    <p id="other_spent">-</p>
+                  </div>
+                </div>
+                <div>
+                  <canvas id="platform_chart"></canvas>
+                </div>
               </div>
             </div>
-            <div>
+            <div
+              class="dom_inner dom_fade_item w35 box_shadow chart full trendline"
+            >
+              <h2>
+                <i class="fa-solid fa-chart-simple main_clr"></i> Age & Gender
+              </h2>
               <div>
-                <canvas id="platform_chart"></canvas>
+                <canvas id="age_gender_total"></canvas>
               </div>
             </div>
-          </div>
-        </div>
-        <div
-        class="dom_inner dom_fade_item w35 box_shadow chart full trendline"
-      >
-        <h2>
-          <i class="fa-solid fa-chart-simple main_clr"></i> Age & Gender
-        </h2>
-        <div>
-          <canvas id="age_gender_total"></canvas>
-        </div>
-      </div>
           </div>
           <div class="dom_row flex ad_detail">
             <div class="dom_inner view_campaign">
@@ -437,7 +409,10 @@
               <div class="dom_table_header">
                 <div class="dom_campaign_filter">
                   <input placeholder="Filter by Campaign name" id="filter" />
-                  <i class="fa-solid fa-magnifying-glass" id="filter_button"></i>
+                  <i
+                    class="fa-solid fa-magnifying-glass"
+                    id="filter_button"
+                  ></i>
                 </div>
                 <div class="dom_select quick_filter">
                   <div class="flex">
@@ -445,11 +420,48 @@
                   </div>
                   <i class="fa-solid fa-angle-down"></i>
                   <ul class="dom_select_show">
-                    <li  class="">
-                      <span data-view="active_ads" class="radio_box"></span> <span>ACTIVE ADS</span>
+                    <li class="">
+                      <span data-view="active_ads" class="view_quick"></span>
+                      <span
+                        ><i class="fa-solid fa-circle green"></i> ACTIVE
+                        ADS</span
+                      >
                     </li>
-                    <li  class="">
-                      <span data-view="reset"  class="radio_box"></span> <span>Reset filter</span>
+                    <li class="">
+                      <span data-view="lead_ads_goal" class="view_quick"></span>
+                      <span
+                        ><i class="fa-solid fa-bullseye"></i> Lead
+                        Campaign</span
+                      >
+                    </li>
+                    <li class="">
+                      <span data-view="mess_ads_goal" class="view_quick"></span>
+                      <span
+                        ><i class="fa-brands fa-facebook-messenger"></i> Message
+                        Campaign</span
+                      >
+                    </li>
+                    <li class="">
+                      <span data-view="ba_ads_goal" class="view_quick"></span>
+                      <span
+                        ><i class="fa-solid fa-eye"></i> Brand Awareness</span
+                      >
+                    </li>
+                    <li class="">
+                      <span
+                        data-view="engage_ads_goal"
+                        class="view_quick"
+                      ></span>
+                      <span
+                        ><i class="fa-solid fa-thumbs-up"></i> Engagement
+                        Page</span
+                      >
+                    </li>
+                    <li class="">
+                      <span data-view="reset" class="view_quick"></span>
+                      <span
+                        ><i class="fa-solid fa-xmark"></i> Reset filter</span
+                      >
                     </li>
                     <!-- <li  class="">
                       <span class="radio_box"></span> <span>Today</span>
@@ -643,7 +655,9 @@
               <div class="detail_set" id="detail_targeting">
                 <div class="detail_gender">
                   <div>
-                    <h2><i class="fa-solid fa-user-tag main_clr"></i> Audiences</h2>
+                    <h2>
+                      <i class="fa-solid fa-user-tag main_clr"></i> Audiences
+                    </h2>
                   </div>
                   <p class="detail_text">Age</p>
                   <div class="age_text">
@@ -660,7 +674,9 @@
                     <p>Khác</p>
                   </div>
                   <p class="detail_text">Optimize</p>
-                  <div class="detail_optimize detail_gender_bar"><p>Anvatage +</p></div>
+                  <div class="detail_optimize detail_gender_bar">
+                    <p>Anvatage +</p>
+                  </div>
                 </div>
                 <div class="detail_gender">
                   <p class="detail_text">Location</p>
@@ -700,7 +716,9 @@
                     class="semi-donut margin"
                     style="--percentage: 26.32; --fill: #ffa900"
                   >
-                    <p class="frequency_number"><span>0.0</span><span></span></p>
+                    <p class="frequency_number">
+                      <span>0.0</span><span></span>
+                    </p>
                   </div>
                   <div class="frequency_number_label">
                     <p>0</p>
@@ -753,7 +771,104 @@
                 <canvas id="chart_by_device"></canvas>
               </div>
             </div>
-          
+          </div>
+        </div>
+        <div class="dom_account" id="dom_account">
+          <div class="dom_row dom_account_title">
+            <h2>
+              <i class="fa-solid fa-money-check main_clr"></i> Ad Account
+              Balance & Spent
+            </h2>
+          </div>
+          <div class="dom_row flex um">
+            <!-- Tổng báo cáo -->
+            <div
+              class="dom_inner dom_fade_item w20 box_shadow chart"
+              id="detail_total_report"
+            >
+              <div class="dom_total_report balance">
+                <ul>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-circle-dollar-to-slot"></i>
+                      Balance</span
+                    >
+                    <p id="detail_balance"><span>...</span></p>
+                  </li>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-receipt"></i> Includes VAT
+                      +10%</span
+                    >
+                    <p id="detail_vat"><span>.ssd..</span></p>
+                  </li>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-credit-card"></i> Payment
+                      Method</span
+                    >
+                    <p id="detail_method"><span>...</span></p>
+                  </li>
+                  <li>
+                    <span
+                      ><i class="fa-solid fa-coins"></i> The last 37
+                      months</span
+                    >
+                    <p id="detail_paid"><span>...</span></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Leads Daily Chart -->
+            <div
+              class="dom_inner dom_fade_item wfull box_shadow chart trendline"
+            >
+              <h2>
+                <i class="fa-solid fa-chart-simple main_clr"></i> Advertising by
+                month
+              </h2>
+              <div class="dom_table_filter">
+                <!-- Filter cho các loại hành động (Lead, Reach, Message, Spend) -->
+                <div class="dom_select year_filter">
+                  <div class="flex">
+                    <p class="dom_selected show">Spent</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <ul class="dom_select_show show">
+                    <li data-type="lead">
+                      <span class="radio_box"></span> <span>Lead</span>
+                    </li>
+                    <li data-type="reach">
+                      <span class="radio_box"></span> <span>Reach</span>
+                    </li>
+                    <li data-type="likepage">
+                      <span class="radio_box"></span> <span>Like page</span>
+                    </li>
+                    <li data-type="message">
+                      <span class="radio_box"></span> <span>Message</span>
+                    </li>
+                    <li data-type="spend">
+                      <span class="radio_box"></span> <span>Spent</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Filter cho các năm -->
+                <div class="dom_select year">
+                  <div class="flex">
+                    <p class="dom_selected show" id="selectedYear">This Year</p>
+                  </div>
+                  <i class="fa-solid fa-angle-down"></i>
+                  <ul class="dom_select_show year" id="yearSelect">
+                    <!-- Các năm sẽ được render động ở đây -->
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <canvas id="detail_account_year"></canvas>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -797,4 +912,3 @@
   <script src="./setup.js"></script>
   <script src="https://meta-report.vercel.app/main.js"></script>
 </html>
-
