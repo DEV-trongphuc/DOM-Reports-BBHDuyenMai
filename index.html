@@ -223,12 +223,14 @@
                     >
                     <p id="spent">
                       <span>-</span>
+                      <span>-%</span>
                     </p>
                   </li>
                   <li>
                     <span><i class="fa-solid fa-street-view"></i> Reach</span>
                     <p id="reach">
                       <span>-</span>
+                      <span>-%</span>
                     </p>
                   </li>
                   <li>
@@ -238,6 +240,7 @@
                     >
                     <p id="message">
                       <span>-</span>
+                      <span>-%</span>
                     </p>
                   </li>
                   <li>
@@ -247,6 +250,7 @@
                     >
                     <p id="lead">
                       <span>-</span>
+                      <span>-%</span>
                     </p>
                   </li>
                 </ul>
@@ -287,14 +291,33 @@
               </div>
             </div>
             <div
-              class="dom_inner dom_fade_item w35 box_shadow chart full trendline"
+              class="dom_inner dom_fade_item w35 box_shadow chart full trendline dom_region_inner"
             >
-              <h2>
-                <i class="fa-solid fa-chart-simple main_clr"></i> Optimization
-                goal
+              <h2 class="">
+                <span>
+                  <i class="fa-solid fa-chart-simple main_clr"></i> Optimization
+                  goal</span
+                >
+                <span class="dom_title_button region"
+                  ><i class="fa-solid fa-repeat"></i> Region Chart</span
+                >
               </h2>
               <div>
                 <canvas id="goal_chart"></canvas>
+              </div>
+              <div class="dom_platform_abs">
+                <h2 class="">
+                  <span>
+                    <i class="fa-solid fa-chart-simple main_clr"></i> Region
+                    Spent</span
+                  >
+                  <span class="dom_title_button region"
+                    ><i class="fa-solid fa-repeat"></i> GOAL Chart</span
+                  >
+                </h2>
+                <div id="region_chart_wrap">
+                  <canvas id="region_chart"></canvas>
+                </div>
               </div>
             </div>
             <!-- <div class="dom_inner dom_fade_item w35 box_shadow chart">
@@ -356,7 +379,13 @@
               class="dom_inner dom_fade_item w33 dom_platform_inner box_shadow chart"
             >
               <h2 class="">
-                <i class="fa-solid fa-layer-group main_clr"></i> Spent Platform
+                <span>
+                  <i class="fa-solid fa-layer-group main_clr"></i> Spent
+                  Platform</span
+                >
+                <span class="dom_title_button platform"
+                  ><i class="fa-solid fa-repeat"></i> Details</span
+                >
               </h2>
               <div class="dom_platform">
                 <div>
@@ -391,6 +420,18 @@
                 <div>
                   <canvas id="platform_chart"></canvas>
                 </div>
+              </div>
+              <div class="dom_platform_abs">
+                <h2 class="">
+                  <span>
+                    <i class="fa-solid fa-layer-group main_clr"></i> Platform
+                    Positions</span
+                  >
+                  <span class="dom_title_button platform">
+                    <i class="fa-solid fa-repeat"></i> Platforms</span
+                  >
+                </h2>
+                <div class="dom_platform_abs_item dom_toplist"></div>
               </div>
             </div>
             <div
@@ -544,7 +585,7 @@
           </div>
         </div>
         <div class="dom_detail" id="dom_detail">
-         <div class="dom_detail_header">
+          <div class="dom_detail_header">
             <div class="dom_detail_header_first">
               <div>
                 <img
@@ -881,6 +922,14 @@
               </div>
             </div>
           </div>
+          <!-- <div class="dom_row">
+            <div class="dom_inner dom_fade_item w50 box_shadow chart trendline">
+              Us
+            </div>
+            <div class="dom_inner dom_fade_item w50 box_shadow chart trendline">
+              sđá
+            </div>
+          </div> -->
         </div>
 
         <div class="dom_ai_report">
@@ -923,6 +972,7 @@
   <script src="./setup.js"></script>
   <script src="https://meta-report.vercel.app/main.js"></script>
 </html>
+
 
 
 
