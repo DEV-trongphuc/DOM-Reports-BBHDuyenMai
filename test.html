@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const accessToken =
+        "EAAQwS9m6tIABO8ZCZCvO4TtPBXcbilAYn3nwZCZB739B8GtMfy2V2uJmgjHMtvsdKS6XMl7YiBuXqg3BxTdh37H7Vv5qYcsZA7IqVYMLqHX3FhQdxD8fSguISa0sDg1INzOfVtUCt8OoNqh0j6PXvu50rZCgMerGZAJ7NAYgLYuTsPw8NvdOEdF5kRX9C0ctu1ka7CS6VcbbXosWnMM";
+      const adAccountId = "676599667843841";
+      let key = "TRB";
+
+      const apiUrl = `https://graph.facebook.com/v16.0/act_${adAccountId}/insights?fields=campaign_id,campaign_name,reach&breakdowns=region&filtering=[{"field":"campaign.name","operator":"CONTAIN","value":"${key}"}]&date_preset=today&access_token=${accessToken}`;
+
+      let regionChartInstance;
+
+      async function fetchRegionData(api) {
+        try {
+          const response = await fetch(api);
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const data = await response.json();
+
+          if (data.error) {
+            console.error("Error from API:", data.error.message);
+            return;
+          }
+
+          let regionReach = {};
+
+          data.data.forEach((entry) => {
+            const region = entry.region || "Unknown";
+            const reach = entry.reach || 0;
+            if (!regionReach[region]) {
+              regionReach[region] = 0;
+            }
+            regionReach[region] += reach;
+          });
+
+          console.log("Tổng reach theo khu vực:", regionReach);
+
+          // Gọi hàm vẽ biểu đồ khi có dữ liệu
+          drawRegionChart(regionReach);
+        } catch (error) {
+          console.error("Fetch error:", error);
+        }
+      }
+
+      function drawRegionChart(regionReach) {
+        const ctx = document.getElementById("regionChart").getContext("2d");
+
+        const regions = Object.keys(regionReach);
+        const reachValues = Object.values(regionReach);
+
+        if (regionChartInstance) {
+          regionChartInstance.destroy();
+        }
+
+        regionChartInstance = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: regions,
+            datasets: [
+              {
+                label: "Lượt Reach theo khu vực",
+                data: reachValues,
+                backgroundColor: [
+                  "#FF5733",
+                  "#33FF57",
+                  "#3357FF",
+                  "#FF33A8",
+                  "#FFC300",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "top",
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      }
+
+      // Gọi hàm lấy dữ liệu theo khu vực
+      fetchRegionData(apiUrl);
+    </script>
+  </body>
+</html>
