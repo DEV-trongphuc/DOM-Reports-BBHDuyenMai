@@ -1,0 +1,45 @@
+/* ================= SHOW ALL DETAILS BUTTON ================= */
+.show_all_container {
+    margin-top: 0.5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+#show_all_btn {
+    background: transparent;
+    border: none;
+    /* No border as requested */
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #888;
+    /* Premium subtle gray */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    font-family: inherit;
+    box-shadow: none;
+    /* Ensure no shadow */
+}
+
+#show_all_btn:hover {
+    color: var(--mainClr);
+    /* Highlight with theme color */
+    background: rgba(0, 0, 0, 0.02);
+    /* Extremely faint hover bg */
+}
+
+#show_all_btn i {
+    font-size: 0.9em;
+    transition: transform 0.3s;
+}
+
+/* Rotate arrow when open */
+#show_all_btn.open i {
+    transform: rotate(180deg);
+}
